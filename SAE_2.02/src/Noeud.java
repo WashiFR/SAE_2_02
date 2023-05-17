@@ -25,6 +25,14 @@ public class Noeud {
     }
 
     /**
+     * Méthode qui retourne le nom du nœud
+     * @return String nom du nœud
+     */
+    public String getNom() {
+        return this.nom;
+    }
+
+    /**
      * Méthode qui retourne la liste des arcs adjacents
      * @return ArrayList<Arc> liste des arcs adjacents
      */

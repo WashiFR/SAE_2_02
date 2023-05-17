@@ -18,9 +18,12 @@ public class GrapheListe implements Graphe {
     /**
      * Constructeur de la classe GrapheListe
      */
-    public GrapheListe() {
+    public GrapheListe(ArrayList<Noeud> noeuds) {
+        this.ensNoeud = noeuds;
         this.ensNom = new ArrayList<String>();
-        this.ensNoeud = new ArrayList<Noeud>();
+        for(Noeud noeud : noeuds){
+            this.ensNom.add(noeud.getNom());
+        }
     }
 
     /**
@@ -30,7 +33,6 @@ public class GrapheListe implements Graphe {
      * @param cout coût de l’arc
      */
     public void ajouterArc(String depart, String destination, double cout){
-        // TODO : Finir la méthode
         // On vérifie que les noeuds existent
         if(this.ensNom.contains(depart) && this.ensNom.contains(destination)){
             // On parcourt la liste des noeuds du graphe
@@ -44,7 +46,7 @@ public class GrapheListe implements Graphe {
     }
 
     /**
-     * Méthode qui retourne tous les nœuds du graphe
+     * Méthode qui retourne tous les noms des nœuds du graphe
      */
     public ArrayList<String> listeNoeuds(){
         return this.ensNom;
@@ -65,5 +67,22 @@ public class GrapheListe implements Graphe {
             }
         }
         return listeSuivant;
+    }
+
+    /**
+     * Méthode d'affichage du graphe
+     */
+    public String toString(){
+        String s = "";
+        // On parcourt la liste des noeuds du graphe
+        for(Noeud noeud : this.ensNoeud){
+            s += noeud.getNom() + " -> ";
+            // On parcourt la liste des arcs adjacents du noeud
+            for(Arc arc : noeud.getAdj()){
+                s += arc.getDest() + "(" + arc.getCout() + ") ";
+            }
+            s += "\n";
+        }
+        return s;
     }
 }

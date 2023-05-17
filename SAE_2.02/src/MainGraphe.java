@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * classe MainGraphe : classe principale du projet
  */
@@ -5,24 +7,29 @@ public class MainGraphe {
     
     public static void main(String[] args) {
         
+        // Création des Noeuds
+        ArrayList<Noeud> noeuds = new ArrayList<Noeud>();
+        noeuds.add(new Noeud("A"));
+        noeuds.add(new Noeud("B"));
+        noeuds.add(new Noeud("C"));
+        noeuds.add(new Noeud("D"));
+        noeuds.add(new Noeud("E"));
+
         // Création du graphe
-        Graphe graphe = new GrapheListe();
-        
-        // Ajout des Noeuds et des Arcs
-        Noeud n1 = new Noeud("A");
-        Noeud n2 = new Noeud("B");
-        Noeud n3 = new Noeud("C");
-        Noeud n4 = new Noeud("D");
-        Noeud n5 = new Noeud("E");
+        GrapheListe graphe = new GrapheListe(noeuds);
 
-        n1.ajouterArc("B", 12);
-        n1.ajouterArc("D", 87);
-        n2.ajouterArc("E", 11);
-        n3.ajouterArc("A", 19);
-        n4.ajouterArc("B", 23);
-        n4.ajouterArc("C", 10);
-        n5.ajouterArc("D", 43);
+        // Ajout des arcs
+        graphe.ajouterArc("A", "B", 12);
+        graphe.ajouterArc("A", "D", 87);
+        graphe.ajouterArc("B", "E", 11);
+        graphe.ajouterArc("C", "A", 19);
+        graphe.ajouterArc("D", "B", 23);
+        graphe.ajouterArc("D", "C", 10);
+        graphe.ajouterArc("E", "D", 43);
 
+        // Affichage des noeuds
+        System.out.println(graphe.toString());
+        // System.out.println(graphe.listeNoeuds());
     }
 
 }

@@ -26,4 +26,20 @@ public class Arc {
         else
             this.cout = c;
     }
+
+    /**
+     * Méthode qui retourne le nom du nœud de destination
+     * @return String nom du nœud de destination
+     */
+    public String getDest() {
+        return this.dest;
+    }
+
+    /**
+     * Méthode qui retourne le coût de l’arc
+     * @return double coût de l’arc
+     */
+    public double getCout() {
+        return this.cout;
+    }
 }
