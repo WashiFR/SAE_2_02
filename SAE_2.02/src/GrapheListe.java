@@ -85,4 +85,20 @@ public class GrapheListe implements Graphe {
         }
         return s;
     }
+
+    /**
+     * Méthode qui retourne le graphe au format Graphviz
+     */
+    public String toGraphviz(){
+        String s = "digraph G {\n";
+        // On parcourt la liste des noeuds du graphe
+        for(Noeud noeud : this.ensNoeud){
+            // On parcourt la liste des arcs adjacents du noeud
+            for(Arc arc : noeud.getAdj()){
+                s += noeud.getNom() + " -> " + arc.getDest() + " [label = " + arc.getCout() + "]\n";
+            }
+        }
+        s += "}";
+        return s;
+    }
 }

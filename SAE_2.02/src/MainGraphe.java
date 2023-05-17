@@ -29,6 +29,7 @@ public class MainGraphe {
 
         // Affichage des noeuds
         System.out.println(graphe.toString());
+        System.out.println(graphe.toGraphviz());
         // System.out.println(graphe.listeNoeuds());
     }
 
