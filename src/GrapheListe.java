@@ -31,9 +31,8 @@ public class GrapheListe implements Graphe {
     /**
      * Constructeur de la classe GrapheListe qui prend en paramètre un nom de fichier à lire
      * @param fichier nom du fichier à lire
-     * @throws IOException
      */
-    public GrapheListe(String fichier) throws IOException {
+    public GrapheListe(String fichier) {
         this.ensNoeud = new ArrayList<Noeud>();
         this.ensNom = new ArrayList<String>();
 
@@ -72,6 +71,8 @@ public class GrapheListe implements Graphe {
 
         } catch (FileNotFoundException e) {
             System.out.println("Le fichier n'existe pas");
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier");
         }
     }
 
@@ -79,7 +80,7 @@ public class GrapheListe implements Graphe {
      * Méthode qui créer un fichier contenant une liste d'arcs à partir d'un nom de fichier contenant le descriptif d'un graphe sous forme de matrice d'adjacence
      * @param fichier nom du fichier à lire
      */
-    public void matriceToArc(String fichier) throws IOException{
+    public void matriceToArc(String fichier) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("../graphes/listeArcs.txt"));
             BufferedReader br = new BufferedReader(new FileReader("../graphes/" + fichier));
@@ -88,8 +89,7 @@ public class GrapheListe implements Graphe {
             int i = 0;
 
             while ((ligne = br.readLine()) != null) {
-                // le '\t' ne marche pas car en txt faire 'tab' compte comme plusieurs espaces
-                String[] tab = ligne.split(" ");
+                String[] tab = ligne.split("\t");
                 if(i == 0){
                     nomNoeuds = tab;
                     i++;
@@ -109,6 +109,8 @@ public class GrapheListe implements Graphe {
 
         } catch (FileNotFoundException e) {
             System.out.println("Le fichier n'existe pas");
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier");
         }
     }
 

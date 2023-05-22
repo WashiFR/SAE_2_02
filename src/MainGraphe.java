@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -7,7 +6,7 @@ import java.util.Collections;
  */
 public class MainGraphe {
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         // ========== Graphe Manuel ==========
         
