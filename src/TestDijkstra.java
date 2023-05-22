@@ -1,8 +1,6 @@
 import static libtest.Lanceur.*;
 import static libtest.OutilTest.*;
 
-import java.util.ArrayList;
-
 /**
  * Class TestDijkstra qui permet de tester l'algorithme de Dijkstra
  */
