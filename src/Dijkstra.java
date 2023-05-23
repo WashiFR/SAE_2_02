@@ -61,6 +61,8 @@ public class Dijkstra implements Algorithme {
                 if (d < v.getValeur(a.getDest())) {
                     v.setValeur(a.getDest(), d);
                     v.setParent(a.getDest(), u);
+                    // Affichage de l'évolution de l'algorithme
+                    // System.out.println(v.toString());
                 }
             }
         }

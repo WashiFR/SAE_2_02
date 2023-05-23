@@ -42,4 +42,13 @@ public class Arc {
     public double getCout() {
         return this.cout;
     }
+
+    /**
+     * Redéfinition de la méthode equals pour la classe Arc (permet d'éviter qu'un noeud ait plusieurs arcs vers le même noeud)
+     * @param destination nom du noeud de destination
+     * @return boolean true si les arcs sont égaux, false sinon
+     */
+    public boolean equals(String destination) {
+        return this.dest.equals(destination);
+    }
 }

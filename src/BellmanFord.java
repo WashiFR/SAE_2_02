@@ -77,6 +77,8 @@ public class BellmanFord implements Algorithme {
                         v.setValeur(arc.getDest(), arc.getCout() + valeurCourante);
                         v.setParent(arc.getDest(), noeud);
                         changement = true;
+                        // Affichage de l'évolution de l'algorithme
+                        // System.out.println(v.toString());
                     }
                 }
             }

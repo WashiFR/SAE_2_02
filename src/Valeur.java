@@ -68,6 +68,10 @@ public class Valeur {
         return this.valeur.get(nom);
     }
 
+    // ##################
+    // # Methode ajouté #
+    // ##################
+
     /**
      * Méthode qui retourne le chemin pris pour arriver au noeud destination
      * @param destination nom du noeud destination

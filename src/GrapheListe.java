@@ -50,20 +50,15 @@ public class GrapheListe implements Graphe {
 
                 // Si le noeud n'existe pas
                 if(!this.ensNom.contains(tab[0])){
-                    noeud.ajouterArc(tab[1], Double.parseDouble(tab[2]));
                     this.ensNoeud.add(noeud);
                     this.ensNom.add(tab[0]);
                 }
-                // Si le noeud existe déjà
-                else {
-                    // On parcourt la liste des noeuds du graphe
-                    for(Noeud n : this.ensNoeud){
-                        if(n.equals(noeud)){
-                            n.ajouterArc(tab[1], Double.parseDouble(tab[2]));
-                            break; // On sort de la boucle car on a trouvé le noeud
-                        }
-                    }
+                if(!this.ensNom.contains(tab[1])){
+                    this.ensNoeud.add(new Noeud(tab[1]));
+                    this.ensNom.add(tab[1]);
                 }
+                
+                this.ajouterArc(tab[0], tab[1], Double.parseDouble(tab[2]));
             }
 
             // On ferme le fichier
@@ -73,6 +68,45 @@ public class GrapheListe implements Graphe {
             System.out.println("Le fichier n'existe pas");
         } catch (IOException e) {
             System.out.println("Erreur lors de la lecture du fichier");
+        }
+    }
+
+    /**
+     * Constructeur de la classe GrapheListe qui prend en paramètre un nombre de noeuds et créer un graphe aléatoire avec ce nombre de noeuds
+     * @param nbNoeuds nombre de noeuds du graphe
+     */
+    public GrapheListe(int nbNoeuds) {
+        this.ensNoeud = new ArrayList<Noeud>();
+        this.ensNom = new ArrayList<String>();
+
+        // On ajoute les noeuds
+        for(int i = 0; i < nbNoeuds; i++){
+            this.ensNoeud.add(new Noeud("N" + i));
+            this.ensNom.add("N" + i);
+        }
+
+        // On ajoute au moins un chemin qui va du premier au dernier noeud
+        for (int i = 0; i < nbNoeuds - 1; i++)
+            this.ajouterArc("N" + i, "N" + (i + 1), Math.random() * 100);
+
+        // On ajoute des chemins aléatoires
+        for (int i = 0; i < nbNoeuds; i++) {
+            for (int j = 0; j < nbNoeuds; j++) {
+                // On ajoute un chemin avec une probabilité de 20%
+                // On vérifie que le noeud de départ et d'arrivée ne sont pas les mêmes
+                if (Math.random() < 0.2 && i != j){
+                    // On vérifie que le noeud de départ et d'arrivée ne sont pas déjà reliés
+                    boolean existe = false;
+                    for(Arc arc : this.suivants("N" + i)){
+                        if(arc.getDest().equals("N" + j)){
+                            existe = true;
+                            break;
+                        }
+                    }
+                    if(!existe)
+                        this.ajouterArc("N" + i, "N" + j, Math.random() * 100);
+                }
+            }
         }
     }
 
