@@ -1,22 +1,22 @@
 import java.util.ArrayList;
 
 /**
- * classe Noeud qui représente les nœuds du graphe.
+ * Classe {@code Noeud} représentant les nœuds du graphe.
  */
 public class Noeud {
     
     /**
-     * Attribut nom correspondant au nom du nœud qui permet de l’identifier
+     * Nom du nœud qui permet de l’identifier
      */
     private String nom;
 
     /**
-     * Attribut adj contenant la liste des arcs reliant ce nœud à ses nœuds adjacents
+     * Liste des arcs reliant ce nœud à ses nœuds adjacents
      */
     private ArrayList<Arc> adj;
 
     /**
-     * Constructeur de la classe Noeud
+     * Construit un {@code Noeud} à partir de son nom
      * @param n nom du nœud
      */
     public Noeud(String n) {
@@ -25,32 +25,32 @@ public class Noeud {
     }
 
     /**
-     * Méthode qui retourne le nom du nœud
-     * @return String nom du nœud
+     * Retourne le nom du nœud
+     * @return {@code String} nom du nœud
      */
     public String getNom() {
         return this.nom;
     }
 
     /**
-     * Méthode qui retourne la liste des arcs adjacents
-     * @return ArrayList<Arc> liste des arcs adjacents
+     * Retourne la liste des arcs adjacents
+     * @return {@code ArrayList<Arc>} liste des arcs adjacents
      */
     public ArrayList<Arc> getAdj() {
         return this.adj;
     }
 
     /**
-     * Méthode qui permet de savoir si deux nœuds sont égaux
+     * Compare les nœuds en fonction de leur nom (2 noeuds sont égaux si ils ont le même nom)
      * @param n nœud à comparer
-     * @return true si les nœuds sont égaux, false sinon
+     * @return {@code true} si les nœuds sont égaux, {@code false} sinon
      */
     public boolean equals(Noeud n) {
         return this.nom.equals(n.nom);
     }
 
     /**
-     * Méthode qui permet d’ajouter un arc à la liste des arcs adjacents
+     * Ajoute un {@code Arc} à la liste des arcs adjacents du nœud
      * @param destination nom du nœud de destination
      * @param cout coût de l’arc
      */

@@ -2,10 +2,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * classe MainBellmanFord : classe principale qui permet de tester l'algorithme de Bellman-Ford
+ * Class principale {@code MainBellmanFord} teste l'algorithme de Bellman-Ford
  */
 public class MainBellmanFord {
     
+    /**
+     * Méthode principale
+     * @param args arguments de la ligne de commande
+     */
     public static void main(String[] args) {
 
         BellmanFord bf = new BellmanFord();

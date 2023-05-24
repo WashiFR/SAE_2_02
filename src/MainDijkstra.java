@@ -2,10 +2,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Clase MainDijkstra qui permet de lancer l'algorithme de Dijkstra
+ * Class principale {@code MainDijkstra} lance l'algorithme de Dijkstra
  */
 public class MainDijkstra {
 
+    /**
+     * Méthode principale
+     * @param args arguments de la ligne de commande
+     */
     public static void main(String[] args) {
 
         Dijkstra dijkstra = new Dijkstra();

@@ -1,5 +1,5 @@
 /**
- * Classe qui effectue l'algorithme de Bellman-Ford sur un graphe
+ * Classe {@code BellmanFord} effectue l'algorithme de Bellman-Ford sur un graphe
  */
 public class BellmanFord implements Algorithme {
 
@@ -48,11 +48,12 @@ public class BellmanFord implements Algorithme {
         - arc : Arc, arc courant
         - nouvelleValeur : Entier, nouvelle valeur du noeud
     */
+    
     /**
-     * Méthode qui effectue l'algorithme de Bellman-Ford sur un graphe
+     * Effectue l'algorithme de Bellman-Ford sur un graphe
      * @param g graphe dont on veut trouver le plus court chemin
      * @param depart nom du noeud de départ
-     * @return Valeur, objet contenant les valeurs et les parents des noeuds
+     * @return {@code Valeur} objet contenant les valeurs et les parents des noeuds
      */
     public Valeur resoudre(Graphe g, String depart) {
         Valeur v = new Valeur();
@@ -77,9 +78,9 @@ public class BellmanFord implements Algorithme {
                         v.setValeur(arc.getDest(), arc.getCout() + valeurCourante);
                         v.setParent(arc.getDest(), noeud);
                         changement = true;
-                        // Affichage de l'évolution de l'algorithme
-                        // System.out.println(v.toString());
                     }
+                    // Affichage de l'évolution de l'algorithme
+                    // System.out.println(v.toString());
                 }
             }
         }

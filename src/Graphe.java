@@ -1,20 +1,20 @@
 import java.util.ArrayList;
 
 /**
- * Interface Graphe 
+ * Interface {@code Graphe} qui définit les méthodes d'un graphe
  */
 public interface Graphe {
 
     /**
-     * Méthode qui retourne tous les nœuds du graphe
-     * @return ArrayList<String> nom des nœuds
+     * Retourne tous les noms des {@code Noeud} du graphe
+     * @return {@code ArrayList<String>} liste des noms des nœuds
      */
     public ArrayList<String> listeNoeuds();
 
     /**
-     * Méthode qui retourne la liste des arcs partant du nœud donné
+     * Retourne la liste des arcs partant du nœud donné
      * @param n nom du nœud
-     * @return ArrayList<Arc> liste des arcs du nœud
+     * @return {@code ArrayList<Arc>} liste des arcs du nœud
      */
     public ArrayList<Arc> suivants(String n);
     

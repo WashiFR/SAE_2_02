@@ -4,7 +4,7 @@ import static libtest.OutilTest.*;
 import java.util.ArrayList;
 
 /**
- * Classe des tests unitaires de la classe Graphe
+ * Classe {@code TestGraphe} tests unitaires de la classe Graphe
  */
 public class TestGraphe {
 

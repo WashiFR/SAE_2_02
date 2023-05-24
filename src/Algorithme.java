@@ -1,13 +1,13 @@
 /**
- * Interface Algorithme qui permet de définir les méthodes communes aux algorithmes
+ * Interface {@code Algorithme}  définit les méthodes communes aux algorithmes (Dijkstra et Bellman-Ford)
  */
 public interface Algorithme {
 
     /**
-     * Méthode qui effectue l'algorithme sur un graphe
+     * Effectue l'algorithme sur un graphe
      * @param g graphe dont on veut trouver le plus court chemin
      * @param depart nom du noeud de départ
-     * @return Valeur, objet contenant les valeurs et les parents des noeuds
+     * @return {@code Valeur} objet contenant les valeurs et les parents des noeuds
      */
     public Valeur resoudre(Graphe g, String depart);
     

@@ -2,22 +2,22 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * Classe GrapheListe qui représente les données associées à un graphe
+ * Classe {@code GrapheListe} représentant les données associées à un graphe
  */
 public class GrapheListe implements Graphe {
 
     /**
-     * Attribut contenant les noms des objets noeuds stockés
+     * Liste des noms des {@code Noeud} stockés dans le graphe
      */
     private ArrayList<String> ensNom;    
 
     /**
-     * Attribut contenant les objets noeuds stockés
+     * Liste des {@code Noeud} stockés dans le graphe
      */
     private ArrayList<Noeud> ensNoeud;
 
     /**
-     * Constructeur de la classe GrapheListe
+     * Construit un {@code GrapheListe} à partir d'une liste de {@code Noeud}
      * @param noeuds liste des noeuds du graphe
      */
     public GrapheListe(ArrayList<Noeud> noeuds) {
@@ -29,7 +29,7 @@ public class GrapheListe implements Graphe {
     }
 
     /**
-     * Constructeur de la classe GrapheListe qui prend en paramètre un nom de fichier à lire
+     * Construit un {@code GrapheListe} à partir d'un fichier contenant une liste d'arcs
      * @param fichier nom du fichier à lire
      */
     public GrapheListe(String fichier) {
@@ -72,7 +72,7 @@ public class GrapheListe implements Graphe {
     }
 
     /**
-     * Constructeur de la classe GrapheListe qui prend en paramètre un nombre de noeuds et créer un graphe aléatoire avec ce nombre de noeuds
+     * Construit un {@code GrapheListe} aléatoire à partir du nombre de noeuds
      * @param nbNoeuds nombre de noeuds du graphe
      */
     public GrapheListe(int nbNoeuds) {
@@ -111,7 +111,7 @@ public class GrapheListe implements Graphe {
     }
 
     /**
-     * Méthode qui créer un fichier contenant une liste d'arcs à partir d'un nom de fichier contenant le descriptif d'un graphe sous forme de matrice d'adjacence
+     * Créer un fichier contenant une liste d'arcs à partir d'un nom de fichier contenant le descriptif d'un graphe sous forme de matrice d'adjacence
      * @param fichier nom du fichier à lire
      */
     public void matriceToArc(String fichier) {
@@ -149,7 +149,7 @@ public class GrapheListe implements Graphe {
     }
 
     /**
-     * Méthode qui permet d’ajouter des noeuds et des arcs à un objet GrapheListe
+     * Ajoute des noeuds et des arcs à un {@code GrapheListe}
      * @param depart nom du nœud de départ
      * @param destination nom du nœud de destination
      * @param cout coût de l’arc
@@ -168,15 +168,17 @@ public class GrapheListe implements Graphe {
     }
 
     /**
-     * Méthode qui retourne tous les noms des nœuds du graphe
+     * Retourne tous les noms des nœuds du graphe
+     * @return {@code ArrayList<String>} liste des noms des nœuds
      */
     public ArrayList<String> listeNoeuds(){
         return this.ensNom;
     }
 
     /**
-     * Méthode qui retourne la liste des arcs partant du nœud donné
+     * Retourne la liste des arcs partant du nœud donné
      * @param n nom du nœud
+     * @return {@code ArrayList<Arc>} liste des arcs du nœud
      */
     public ArrayList<Arc> suivants(String n){
         ArrayList<Arc> listeSuivant = new ArrayList<Arc>();
@@ -192,7 +194,8 @@ public class GrapheListe implements Graphe {
     }
 
     /**
-     * Méthode d'affichage du graphe
+     * Affiche le graphe
+     * @return {@code String} représentation du graphe
      */
     public String toString(){
         String s = "";
@@ -209,7 +212,8 @@ public class GrapheListe implements Graphe {
     }
 
     /**
-     * Méthode qui retourne le graphe au format Graphviz
+     * Affiche le graphe au format Graphviz
+     * @return {@code String} représentation du graphe au format Graphviz
      */
     public String toGraphviz(){
         String s = "digraph G {\n";

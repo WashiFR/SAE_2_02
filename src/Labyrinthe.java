@@ -152,8 +152,8 @@ public class Labyrinthe {
     }
 
     /**
-     * genere un graphe a partir du labyrinthe
-     * @return graphe genere
+     * Génère un graphe à partir du labyrinthe
+     * @return {@code Graphe} graphe généré
      */
     public GrapheListe genererGraphe(){
 

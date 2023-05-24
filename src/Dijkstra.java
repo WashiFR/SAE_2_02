@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Classe qui effectue l'algorithme de Dijkstra sur un graphe
+ * Classe {@code Dijkstra} effectue l'algorithme de Dijkstra sur un graphe
  */
 public class Dijkstra implements Algorithme {
 
@@ -34,10 +34,10 @@ public class Dijkstra implements Algorithme {
      */
 
     /**
-     * Méthode qui effectue l'algorithme de Dijkstra sur un graphe
+     * Effectue l'algorithme de Dijkstra sur un graphe
      * @param g graphe dont on veut trouver le plus court chemin
      * @param depart nom du noeud de départ
-     * @return Valeur, objet contenant les valeurs et les parents des noeuds
+     * @return {@code Valeur} objet contenant les valeurs et les parents des noeuds
      */
     public Valeur resoudre(Graphe g, String depart) {
         ArrayList<String> noeuds = new ArrayList<String>();
@@ -61,9 +61,9 @@ public class Dijkstra implements Algorithme {
                 if (d < v.getValeur(a.getDest())) {
                     v.setValeur(a.getDest(), d);
                     v.setParent(a.getDest(), u);
-                    // Affichage de l'évolution de l'algorithme
-                    // System.out.println(v.toString());
                 }
+                // Affichage de l'évolution de l'algorithme
+                // System.out.println(v.toString());
             }
         }
         return v;

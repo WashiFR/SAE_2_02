@@ -73,9 +73,9 @@ public class Valeur {
     // ##################
 
     /**
-     * Méthode qui retourne le chemin pris pour arriver au noeud destination
+     * Retourne le chemin pris pour arriver au noeud destination
      * @param destination nom du noeud destination
-     * @return le chemin sous forme de liste de noeuds
+     * @return {@code List<String>} le chemin sous forme de liste de nom des noeuds
      */
     public List<String> calculerChemin(String destination) {
         List<String> chemin = new ArrayList<>();

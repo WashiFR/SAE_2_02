@@ -2,7 +2,7 @@ import static libtest.Lanceur.*;
 import static libtest.OutilTest.*;
 
 /**
- * Class TestDijkstra qui permet de tester l'algorithme de Dijkstra
+ * Class {@code TestDijkstra} teste l'algorithme de Dijkstra
  */
 public class TestDijkstra {
 

@@ -2,10 +2,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * classe MainGraphe : classe principale du projet
+ * Class principale {@code MainGraphe}
  */
 public class MainGraphe {
     
+    /**
+     * Méthode principale
+     * @param args arguments de la ligne de commande
+     */
     public static void main(String[] args) {
 
         // ========== Graphe Manuel ==========
@@ -56,10 +60,10 @@ public class MainGraphe {
         // graphe2.matriceToArc("matrice.txt");
 
         // ========== Graphe Aléatoire ==========
-        //GrapheListe ga = new GrapheListe(10);
+        // GrapheListe ga = new GrapheListe(10);
 
         // Affichage du graphe
-        //System.out.println(ga.toString());
+        // System.out.println(ga.toString());
 
         // Affichage du graphe en format Graphviz
         //System.out.println(ga.toGraphviz());

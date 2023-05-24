@@ -2,7 +2,7 @@ import static libtest.Lanceur.*;
 import static libtest.OutilTest.*;
 
 /**
- * Classe de test de l'algorithme de Bellman-Ford
+ * Class {@code TestBellmanFord} tests de l'algorithme de Bellman-Ford
  */
 public class TestBellmanFord {
 
